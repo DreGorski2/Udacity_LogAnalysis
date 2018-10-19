@@ -28,6 +28,13 @@ Create a reporting tool that prints out reports (in plain text) based on the dat
 ```sql
  news=> select title, views from (select substring(path, '[^/]*$'), count(*) as views from log where path !='/' group by path) as views, articles where substring = slug order by views desc limit 3;
 ```
+Output:
+
+Popular articles
+
+Candidate is jerk, alleges rival - 338647
+Bears love berries, alleges bear - 253801
+Bad things gone, say good people - 170098
 
 joining the articles and log table where the slug equales the path by removing the '/article/' from the path by starting the after the / and removing any incomplete path's with does not equal '/'. 
 
@@ -45,7 +52,15 @@ news=> select name, sum(views) as page_views from
            as master group by name order by page_views desc; 
 ```
 
- Joining articles, log , and authors into one table useing 2 subqueries. The first being the subquery from question 1 the second is modified to join where the substring(path) equales the slug as well as where the the author = author(id). We then parse this master table down to just name and and sum of views for each author grouping by name from authors table and page views. 
+Output:
+   Top authors
+
+   Ursula La Multa - 507594
+   Rudolf von Treppenwitz - 423457
+   Anonymous Contributor - 170098
+   Markoff Chaney - 84557 
+
+Joining articles, log , and authors into one table useing 2 subqueries. The first being the subquery from question 1 the second is modified to join where the substring(path) equales the slug as well as where the the author = author(id). We then parse this master table down to just name and and sum of views for each author grouping by name from authors table and page views. 
  
 **3.** _On which days did more than 1% of requests lead to errors? The log table includes a column status that indicates the HTTP status code that the news site sent to the user's browser._
 
@@ -56,6 +71,11 @@ news=> select hospital.date, requests, error_404, (error_404::float/requests::fl
 where hospital.date = errors.date
 order by hospital.date desc; 
 ```sql
+
+Output:
+     Error logs
+
+     2016-07-17 - 2.3
 
 Gather timestamps(requests) and group them by date, gather status(error_404) that display the "404 NOT FOUND' error, and divide the error_404 column by requests to get the error_rate. 
 
