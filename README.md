@@ -92,7 +92,7 @@ vagrant@vagrant:~$ python assignment.py
 ```
 
 **4.Then python will display the formated query results.** 
-
+```
 Popular articles
 
 Candidate is jerk, alleges rival - 338647
@@ -111,7 +111,7 @@ Markoff Chaney - 84557
 Error logs
 
 2016-07-17 - 2.3
-
+```
 
 
 
