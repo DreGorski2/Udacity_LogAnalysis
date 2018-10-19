@@ -68,6 +68,46 @@ where sub.error_rate > 1;
 Gather timestamps(requests) and group them by date, gather status(error_404) that display the "404 NOT FOUND' error, and divide the error_404 column by requests to get the error_rate. Put the entire query into the a sub-query and filter that to get the result needed by only showing error-rate greater than 1.
 
 
+**Run the Queries**
+
+Queries found the SQl.py are formated with Python3 
+
+Run the following commands in the terminal window to execute the python script uing pyscopg2 as the db client 
+
+**1. List the files**
+
+vagrant@vagrant:~$ ls
+assignment.py  redis-stable  redis-stable.tar.gz  test2.py  test3.py  test4.py  test.py
+
+**2. To find the current directory path**
+
+vagrant@vagrant:~$ pwd
+/home/vagrant
+
+**3. Run the script calling out python**
+vagrant@vagrant:~$ python assignment.py
+
+
+**Then python will display the formated query results.** 
+
+Popular articles
+
+Candidate is jerk, alleges rival - 338647
+Bears love berries, alleges bear - 253801
+Bad things gone, say good people - 170098
+
+
+Top authors
+
+Ursula La Multa - 507594
+Rudolf von Treppenwitz - 423457
+Anonymous Contributor - 170098
+Markoff Chaney - 84557
+
+
+Error logs
+
+2016-07-17 - 2.3
 
 
 
