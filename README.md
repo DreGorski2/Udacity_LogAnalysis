@@ -26,8 +26,10 @@ Create a reporting tool that prints out reports (in plain text) based on the dat
 **1.** _What are the most popular three articles of all time? Which articles have been accessed the most? Present this information as a sorted list with the most popular article at the top_
 
 ```sql
+
  news=> select title, views from (select substring(path, '[^/]*$'), count(*) as views from log where path !='/' group by path) as views, articles where substring = slug order by views desc limit 3;
-```sql
+ 
+```
 
 Output:
 
@@ -51,7 +53,7 @@ news=> select name, sum(views) as page_views from
              where substring = slug and author = author.id
              order by views desc)
            as master group by name order by page_views desc;
-```sql
+```
 
 Output:
    Top authors
@@ -71,7 +73,7 @@ news=> select hospital.date, requests, error_404, (error_404::float/requests::fl
 (select date(time) as date, count(*) as error_404 from log where status = '404 NOT FOUND' group by date) as errors
 where hospital.date = errors.date
 order by hospital.date desc; 
-```sql
+```
 
 Output:
      Error logs
