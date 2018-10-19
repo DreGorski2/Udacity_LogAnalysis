@@ -33,7 +33,10 @@ Create a reporting tool that prints out reports (in plain text) based on the dat
 joining the articles and log table where the slug equales the path by removing the '/article/' from the path by starting the after the / and removing any incomplete path's with does not equal '/'. 
 
 
-**2. Who are the most popular article authors of all time? That is, when you sum up all of the articles each author has written, which authors get the most page views? Present this as a sorted list with the most popular author at the top.
+
+
+
+**2. Who are the most popular article authors of all time? That is, when you sum up all of the articles each author has written, which authors get the most page views? Present this as a sorted list with the most popular author at the top.**
 
 ```sql
 news=> select name, sum(views) as page_views from
@@ -47,8 +50,11 @@ news=> select name, sum(views) as page_views from
 ```
 
 Joining articles, log , and authors into one table useing 2 subqueries. The first being the subquery from question 1 the second is modified to join where the substring(path) equales the slug as well as where the the author = author(id). We then parse this master table down to just name and and sum of views for each author grouping by name from authors table and page views. 
+
+
+
  
-**3.On which days did more than 1% of requests lead to errors? The log table includes a column status that indicates the HTTP status code that the news site sent to the user's browser.
+**3.On which days did more than 1% of requests lead to errors? The log table includes a column status that indicates the HTTP status code that the news site sent to the user's browser.**
 
 ```sql
 news=> select hospital.date, requests, error_404, (error_404::float/requests::float * 100) as error_rate from
