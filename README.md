@@ -75,20 +75,23 @@ Queries found the SQl.py are formated with Python3
 Run the following commands in the terminal window to execute the python script uing pyscopg2 as the db client 
 
 **1. List the files**
-
+```
 vagrant@vagrant:~$ ls
+```
 assignment.py  redis-stable  redis-stable.tar.gz  test2.py  test3.py  test4.py  test.py
 
 **2. To find the current directory path**
-
+```
 vagrant@vagrant:~$ pwd
+```
 /home/vagrant
 
 **3. Run the script calling out python**
+```
 vagrant@vagrant:~$ python assignment.py
+```
 
-
-**Then python will display the formated query results.** 
+**4.Then python will display the formated query results.** 
 
 Popular articles
 
