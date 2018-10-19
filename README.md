@@ -65,7 +65,7 @@ select * from
 where sub.error_rate > 1;
 ```
 
-Gather timestamps(requests) and group them by date, gather status(error_404) that display the "404 NOT FOUND' error, and divide the error_404 column by requests to get the error_rate. 
+Gather timestamps(requests) and group them by date, gather status(error_404) that display the "404 NOT FOUND' error, and divide the error_404 column by requests to get the error_rate. Put the entire query into the a sub-query and filter that to get the result needed by only showing error-rate greater than 1.
 
 
 
