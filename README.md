@@ -57,11 +57,12 @@ Joining articles, log , and authors into one table useing 2 subqueries. The firs
 **3.On which days did more than 1% of requests lead to errors? The log table includes a column status that indicates the HTTP status code that the news site sent to the user's browser.**
 
 ```sql
-news=> select hospital.date, requests, error_404, (error_404::float/requests::float * 100) as error_rate from
-(select date(time) as date, count(*) as requests from log group by date) as hospital,
-(select date(time) as date, count(*) as error_404 from log where status = '404 NOT FOUND' group by date) as errors
-where hospital.date = errors.date
-order by hospital.date desc; 
+select * from
+   news=> select hospital.date, requests, error_404, (error_404::float/requests::float * 100) as error_rate from
+   (select date(time) as date, count(*) as requests from log group by date) as hospital,
+   (select date(time) as date, count(*) as error_404 from log where status = '404 NOT FOUND' group by date) as errors
+   where hospital.date = errors.date) as sub
+where sub.error_rate > 1;
 ```
 
 Gather timestamps(requests) and group them by date, gather status(error_404) that display the "404 NOT FOUND' error, and divide the error_404 column by requests to get the error_rate. 
