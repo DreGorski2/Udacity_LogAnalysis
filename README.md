@@ -30,7 +30,7 @@ Create a reporting tool that prints out reports (in plain text) based on the dat
  news=> select title, views from (select substring(path, '[^/]*$'), count(*) as views from log where path !='/' group by path) as views, articles where substring = slug order by views desc limit 3;
 ```
 
-joining the articles and log table where the slug equales the path by removing the '/article/' from the path by starting the after the / and removing any incomplete path's with does not equal '/'. 
+joining the articles and log table where the slug equals the path and removing the '/article/' from the path by starting the after the / , and removing any incomplete path's with does not equal '/'. 
 
 
 
