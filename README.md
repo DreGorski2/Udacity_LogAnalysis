@@ -23,7 +23,7 @@ Create a reporting tool that prints out reports (in plain text) based on the dat
 
 **The Queries**
 
-**1.What are the most popular three articles of all time? Which articles have been accessed the most? Present this information as a sorted list with the most popular article at the top**
+**1. What are the most popular three articles of all time? Which articles have been accessed the most? Present this information as a sorted list with the most popular article at the top**
 
 ```sql
 
@@ -54,7 +54,7 @@ Joining articles, log , and authors into one table useing 2 subqueries. The firs
 
 
  
-**3.On which days did more than 1% of requests lead to errors? The log table includes a column status that indicates the HTTP status code that the news site sent to the user's browser.**
+**3. On which days did more than 1% of requests lead to errors? The log table includes a column status that indicates the HTTP status code that the news site sent to the user's browser.**
 
 ```sql
 select * from
